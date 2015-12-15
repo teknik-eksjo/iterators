@@ -1,0 +1,1 @@
+"""Övningar på decorators"""
