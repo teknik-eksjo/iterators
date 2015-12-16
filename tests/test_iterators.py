@@ -8,8 +8,7 @@ class IteratorTests(unittest.TestCase):
     def test_cubes(self):
         c = iter(Cubes())
         for i in range(1, 1001):
-            value = next(c)
-            self.assertEqual(c, i ** 3)
+            self.assertEqual(next(c), i ** 3)
 
     def test_primes(self):
         with open('tests/data_primes.json') as file:
@@ -32,15 +31,26 @@ class IteratorTests(unittest.TestCase):
                 'Tet', 'Yod', 'Kaf', 'Lamed', 'Mem', 'Nun', 'Samekh', 'Ayin',
                 'Pe', 'Tsadi', 'Qof', 'Resh', 'Shin', 'Tav']
 
-        a = iter(Fibonacci())
+        a = iter(Alphabet())
         for alpha in data:
             self.assertEqual(next(a), alpha)
         self.assertRaises(StopIteration, next, a)
 
-    @unittest.skip
+    @unittest.expectedFailure
     def test_permutations(self):
-        pass
+        data = ['abc', 'acb', 'bac', 'cab', 'cba', 'bca']
+        result = []
+        p = iter(Permutations())
+        for i in data:
+            result.append(next(p))
+        self.assertCountEqual(result, data)
+        self.assertRaises(StopIteration, next, p)
 
-    @unittest.skip
+    @unittest.expectedFailure
     def test_lookandsay(self):
-        pass
+        with open('tests/data_lookandsay.json') as file:
+            data = json.load(file)
+
+        l = iter(LookAndSay())
+        for value in data:
+            self.assertEqual(next(l), value)
