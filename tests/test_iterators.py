@@ -3,7 +3,7 @@ from exercises.iterators import Cubes, Primes, Fibonacci, Alphabet, Permutations
 import json
 
 
-class CubesIteratorTests(IteratorTestCase):
+class CubesIteratorTests(unittest.TestCase):
 
     def test_is_iterator(self):
         self.assertIn('__init__', dir(Cubes))
@@ -17,7 +17,7 @@ class CubesIteratorTests(IteratorTestCase):
                 self.assertEqual(next(c), i ** 3)
 
 
-class PrimesIteratorTests(IteratorTestCase):
+class PrimesIteratorTests(unittest.TestCase):
 
     def test_is_iterator(self):
         self.assertIn('__init__', dir(Primes))
@@ -34,7 +34,7 @@ class PrimesIteratorTests(IteratorTestCase):
                 self.assertEqual(next(p), prime)
 
 
-class FibonacciIteratorTests(IteratorTestCase):
+class FibonacciIteratorTests(unittest.TestCase):
 
     def test_is_iterator(self):
         self.assertIn('__init__', dir(Fibonacci))
@@ -51,7 +51,7 @@ class FibonacciIteratorTests(IteratorTestCase):
                 self.assertEqual(next(f), fibonacci)
 
 
-class AlphabetIteratorTests(IteratorTestCase):
+class AlphabetIteratorTests(unittest.TestCase):
 
     def test_is_iterator(self):
         self.assertIn('__init__', dir(Alphabet))
@@ -70,7 +70,7 @@ class AlphabetIteratorTests(IteratorTestCase):
         self.assertRaises(StopIteration, next, a)
 
 
-class PermutationsIteratorTests(IteratorTestCase):
+class PermutationsIteratorTests(unittest.TestCase):
 
     def test_is_iterator(self):
         self.assertIn('__init__', dir(Permutations))
@@ -87,7 +87,7 @@ class PermutationsIteratorTests(IteratorTestCase):
         self.assertRaises(StopIteration, next, p)
 
 
-class LookAndSayIteratorTests(IteratorTestCase):
+class LookAndSayIteratorTests(unittest.TestCase):
 
     def test_is_iterator(self):
         self.assertIn('__init__', dir(LookAndSay))
