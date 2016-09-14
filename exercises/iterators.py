@@ -1,4 +1,4 @@
-"""Övningar på iterators"""
+"""Övningar på iterators."""
 
 
 class Cubes():

@@ -1,4 +1,4 @@
-"""Övningar på generators"""
+"""Övningar på generators."""
 
 
 def cubes():

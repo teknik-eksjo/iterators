@@ -1,4 +1,4 @@
-"""Övningar på decorators"""
+"""Övningar på decorators."""
 
 from functools import wraps
 
@@ -6,10 +6,11 @@ from functools import wraps
 def memoize(F):
     """Implementera memoization (cache).
 
-    Detta är den enklaste typen av cache som helt enkelt lagrar alla returvärden
-    för de anropsvärden som används.
+    Detta är den enklaste typen av cache som helt enkelt lagrar alla
+    returvärden för de anropsvärden som används.
     """
     pass
+
 
 def rovarsprak(F):
     """Översätt utdata till rövarspråket.
